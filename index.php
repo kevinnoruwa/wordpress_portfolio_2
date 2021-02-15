@@ -200,7 +200,7 @@
 
 
         
-        <?php endwhile; ?>
+            <?php endwhile ?>
           </div>
         </div>
       </div>
@@ -213,16 +213,15 @@
         <div class="blog-container">
 
         
-          <!-- start of post -->
+    
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-          <a href="<?php echo $permalink ?>" class="post">
+                <!-- start of post -->
+          <a href="<?php echo $slug ?>" class="post post-<?php the_ID(); ?>">
             <div class="post-img" style="background: url(' <?php the_post_thumbnail_url('medium'); ?>');"></div>
             <div class="details">
               <h4><?php the_title() ?></h4>
               <p> <?php the_excerpt() ?></p>
             </div>
-   
             <div class="more">
               <div class="button">
                 Read More
@@ -233,16 +232,6 @@
             
 
           <?php endwhile; else : ?>
-
-           
-            
-
-         
-          
-          
-        
-         
-         
           <div>
             <h1>Blogs coming soon</h1>
           </div>
